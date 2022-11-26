@@ -6,35 +6,41 @@
                     <img src="../../../assets/add.png" width="100px" height="100px">
                 </div>
                 <h1 class="text-center">Registrate aquí</h1>
-                <form action="">
+                <form (ngSubmit)="formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Nombre de usuario</mat-label>
-                        <input matInput placeholder="Ingrese nombre de usuario">
+                        <input required [(ngModel)]="user.username" name="username" matInput
+                            placeholder="Ingrese nombre de usuario">
+                        <mat-hint *ngIf="errorMsg != ''">{{ errorMsg }}</mat-hint>
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Contraseña</mat-label>
-                        <input matInput placeholder="Ingrese contraseña">
+                        <input [(ngModel)]="user.password" name="password" type="password" matInput
+                            placeholder="Ingrese contraseña">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Nombre</mat-label>
-                        <input matInput placeholder="Ingrese su nombre">
+                        <input [(ngModel)]="user.nombre" name="nombre" matInput placeholder="Ingrese su nombre">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Apellidos</mat-label>
-                        <input matInput placeholder="Ingrese sus apellidos">
+                        <input [(ngModel)]="user.apellido" name="apellido" matInput placeholder="Ingrese sus apellidos">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Correo electrónico</mat-label>
-                        <input type="email" matInput placeholder="Ingrese su correo electrónico">
+                        <input [(ngModel)]="user.email" name="mail" type="email" matInput
+                            placeholder="Ingrese su correo electrónico">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Teléfono</mat-label>
-                        <input type="" matInput placeholder="Ingrese su teléfono">
+                        <input [(ngModel)]="user.telefono" name="telefono" type="text" matInput
+                            placeholder="Ingrese su teléfono">
                     </mat-form-field>
 
                     <div class="container text-center">
-                        <button mat-raised-button color="primary">Registrar</button>
-                        <button style="margin-left: 20px;" mat-raised-button color="accent">Limpiar</button>
+                        <button mat-raised-button color="primary" type="submit">Registrar</button>
+                        <button style="margin-left: 20px;" mat-raised-button color="accent" type="button"
+                            (click)="limpiarForm()">Limpiar</button>
                     </div>
                 </form>
             </div>
