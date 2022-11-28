@@ -11,20 +11,21 @@
                         <mat-label>Nombre de usuario</mat-label>
                         <input required [(ngModel)]="user.username" name="username" matInput
                             placeholder="Ingrese nombre de usuario">
-                        <mat-hint *ngIf="errorMsg != ''">{{ errorMsg }}</mat-hint>
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Contraseña</mat-label>
-                        <input [(ngModel)]="user.password" name="password" type="password" matInput
+                        <input required [(ngModel)]="user.password" name="password" type="password" matInput
                             placeholder="Ingrese contraseña">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Nombre</mat-label>
-                        <input [(ngModel)]="user.nombre" name="nombre" matInput placeholder="Ingrese su nombre">
+                        <input required [(ngModel)]="user.nombre" name="nombre" matInput
+                            placeholder="Ingrese su nombre">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Apellidos</mat-label>
-                        <input [(ngModel)]="user.apellido" name="apellido" matInput placeholder="Ingrese sus apellidos">
+                        <input required [(ngModel)]="user.apellido" name="apellido" matInput
+                            placeholder="Ingrese sus apellidos">
                     </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Correo electrónico</mat-label>
